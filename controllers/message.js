@@ -16,12 +16,12 @@ const getMessage = async () => {};
 // add new message
 const addNewMessage = async (
   // user_id,
-  // chatroom_id,
+  // room_id,
   content
 ) => {
   const newMessage = new Message({
     // user_id,
-    // chatroom_id,
+    // room_id,
     content,
   });
   await newMessage.save();
