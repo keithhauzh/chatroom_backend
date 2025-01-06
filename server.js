@@ -38,10 +38,12 @@ app.get("/", (req, res) => {
 // import all the routes
 const userRouter = require("./routes/user");
 const messageRouter = require("./routes/message");
+const roomRouter = require("./routes/room");
 
 // define urls for routers
 app.use("/auth", userRouter);
 app.use("/message", messageRouter);
+app.use("/room", roomRouter);
 
 // start the server
 app.listen(5554, () => {

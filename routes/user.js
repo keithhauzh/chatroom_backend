@@ -12,11 +12,17 @@ router.post("/login", async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    // login user via login function
-    const user = await login(email, password);
+    if (!email || !password) {
+      {
+        return res.status(400).send({ error: "Required data is missing :(" });
+      }
+    } else {
+      // login user via login function
+      const user = await login(email, password);
 
-    // send back the user data
-    res.status(200).send(user);
+      // send back the user data
+      res.status(200).send(user);
+    }
   } catch (error) {
     res.status(400).send({ error: error._message });
   }

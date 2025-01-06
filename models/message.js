@@ -4,7 +4,7 @@ const { Schema, model } = require("mongoose");
 // setup the messages
 const messageSchema = new Schema({
   content: { type: String, required: true },
-  post_at: Date,
+  sent_at: { type: Date, default: Date.now },
 });
 
 const Message = model("Message", messageSchema);
